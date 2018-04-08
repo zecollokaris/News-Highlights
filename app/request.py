@@ -22,13 +22,14 @@ def get_newss(category):
         get_newss_data = url.read()
         get_newss_response = json.loads(get_newss_data)
 
-        news_results =None
+        news_results = None
 
         if get_newss_response['results']:
             news_results_list = get_newss_response['results']
             news_results = process_results(news_results_list)
 
-    return news_results
+
+    
 
 
 
@@ -48,6 +49,10 @@ def process_results(news_list):
         poster = news_item.get('poster_path')
         vote_average = news_item.get('vote_average')
         vote_count = news_item.get('vote_count')
+
+
         if poster:
             news_object = News(id,title,overview,poster,vote_average,vote_count)
             news_results.append(news_object)
+
+    return_news_results 
