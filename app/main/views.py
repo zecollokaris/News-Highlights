@@ -1,8 +1,9 @@
 from flask import render_template,request,redirect,url_for
 
-from app import app
+from . import app
 
-from .request import get_newss,get_news
+from ..request import get_newss,get_news
+
 
 
 #Views
@@ -40,13 +41,3 @@ def news(id):
 
 
 
-@app.route('/search/<news_name>')
-def search(news_name):
-
-    '''Veiw function to display the search results'''
-
-    news_name_list = news_name.split(" ")
-    news_name_format = "+".join(news_name_list)
-    searched_newss = search_news(news_name_format)
-    title = f'search results for {news_name}'
-    return render_template('search.html',newss = searched_newss)
