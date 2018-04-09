@@ -27,10 +27,11 @@ def get_newss(category):
         if get_newss_response['results']:
             news_results_list = get_newss_response['results']
             news_results = process_results(news_results_list)
+    
+    return news_results
 
 
     
-
 
 
 def process_results(news_list):
@@ -56,3 +57,5 @@ def process_results(news_list):
             news_results.append(news_object)
 
     return news_results 
+
+

@@ -1,8 +1,8 @@
 from flask import render_template
-from app import app
 from .config import DevConfig
+from app import app
 
-# from .request import get_newss
+from .request import get_newss
 
 
 #Views
@@ -17,4 +17,3 @@ def index():
     now_showing_news = get_newss('now_showing')
     title= 'Home -Welcome to the best News Review Website Online'
     return render_template('index.html', title = title, popular = popular_news, upcoming = upcoming_news, now_showing = now_showing_news)
-    return '<h1>hello world</h1>'
