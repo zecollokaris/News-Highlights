@@ -47,13 +47,13 @@ def get_news(id):
         news_object = None
         if news_details_response:
             id = news_details_response.get('id')
-            title = news_details_response.get('original_title')
-            overview = news_details_response.get('overview')
-            poster = news_details_response.get('poster_path')
-            vote_average = news_details_response.get('vote_average')
-            vote_count = news_details_response.get('vote_count')
+            name = news_details_response.get('name')
+            author = news_details_response.get('author')
+            title = news_details_response.get('title')
+            description = news_details_response.get('description')
+            url = news_details_response.get('url')
 
-            news_object =News(id,title,overview,poster,vote_average,vote_count)
+            news_object =News(id,name,author,title,description,url)
 
     return news_object
 
@@ -89,17 +89,17 @@ def process_results(news_list):
     news_results = []
     for news_item in news_list:
         id = news_item.get('id')
-        title = news_item.get('original_title')
-        overview = news_item.get('overview')
-        poster = news_item.get('poster_path')
-        vote_average = news_item.get('vote_average')
-        vote_count = news_item.get('vote_count')
+        name = news_item.get('name')
+        author = news_item.get('author')
+        poster = news_item.get('title')
+        description = news_item.get('description')
+        url = news_item.get('url')
 
 
         if poster:
 
 
-            news_object = News(id,title,overview,poster,vote_average,vote_count)
+            news_object = News(id,name,author,poster,description,url)
             news_results.append(news_object)
 
     return news_results 
