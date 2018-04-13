@@ -1,13 +1,11 @@
 from flask import render_template,request,redirect,url_for
-
-from . import app
-
-from ..request import get_newss,get_news
+from . import main
+from ..requests import get_newss,get_news
 
 
 
 #Views
-@app.route('/')
+@main.route('/')
 def index():
 
     '''Veiw root page function that returns the index page and its data'''
@@ -28,7 +26,7 @@ def index():
         return render_template('index.html', title = title, popular = popular_news, upcoming = upcoming_news, now_showing = now_showing_news)
 
 
-@app.route('/news/<int:id>')
+@main.route('/news/<int:id>')
 def news(id):
 
     '''
