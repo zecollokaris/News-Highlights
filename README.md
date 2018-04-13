@@ -15,3 +15,7 @@
 -The link to my github Repository is: https://github.com/zecollokaris
 
 -from there you can access the work
+#{follow the above instructions for set up}
+
+#Description
+An application that will help list and preview news articles from various sources.
