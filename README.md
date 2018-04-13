@@ -19,3 +19,8 @@
 
 #Description
 An application that will help list and preview news articles from various sources.
+
+#Contact
+-Mobile number: (254) 798731203
+-Email Address: collo.kariss@gmail.com
+-github: zecollokaris
